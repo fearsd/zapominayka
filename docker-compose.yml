@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  app:
+    build: .
+    container_name: zapominayka
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+    volumes:
+      - ./src:/src
+    environment:
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${HOSTNAME_DB}:5432/${POSTGRES_DB}
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13-alpine
+    container_name: zapominayka-db
+    hostname: ${HOSTNAME_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    command: --autovacuum=off --fsync=off --synchronous_commit=off --full_page_writes=off --work_mem=12MB --max-connections=10 --max_wal_senders=0
+
+volumes:
+  postgres_data:

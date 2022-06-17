@@ -2,8 +2,10 @@ name: testing
 
 on: [push]
 
-jobs:
+env:
+  MIN_CODE_COVERAGE: 89
 
+jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -28,4 +30,6 @@ jobs:
           make lint
       - name: Test with pytest
         run: |
-          make test
+          mkdir -p src/app/static
+          cd src && pytest --dead-fixtures
+          cd src && pytest -x

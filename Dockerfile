@@ -30,7 +30,6 @@ RUN pip install --no-cache-dir -r /requirements.txt
 WORKDIR /src
 COPY src /src
 
-RUN ./manage.py compilemessages
 RUN ./manage.py collectstatic --noinput
 
 USER nobody

@@ -24,7 +24,7 @@ jobs:
           pip install -r dev-requirements.txt
       - name: Env file and changing directory
         run: |
-          mv src/app/.env.ci src/app/.env && cd src
+          mv src/app/.env.ci src/app/.env
       - name: Lint with flake8
         run: |
           make lint

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.http import HttpRequest
 from django.http import HttpResponse
 from django.urls import include
 from django.urls import path
@@ -8,7 +9,7 @@ api = [
 ]
 
 
-def hello(request):
+def hello(request: HttpRequest) -> HttpResponse:
     return HttpResponse('Everything is ok')
 
 

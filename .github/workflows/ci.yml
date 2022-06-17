@@ -30,7 +30,6 @@ jobs:
           make lint
       - name: Test with pytest
         run: |
-          mkdir -p src/app/static
           cd src && pytest --dead-fixtures
           cd src && pytest -x
           cd src && pytest --cov-fail-under=${{ env.MIN_CODE_COVERAGE }}

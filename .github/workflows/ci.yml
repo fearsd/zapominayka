@@ -24,6 +24,7 @@ jobs:
           pip install -r dev-requirements.txt
       - name: Lint with flake8
         run: |
+          cp src/app/.env.ci src/app/.env
           make lint
       - name: Test with pytest
         run: |

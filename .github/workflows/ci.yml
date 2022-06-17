@@ -1,11 +1,10 @@
+
 name: testing
 
 on: [push]
 
-env:
-  MIN_CODE_COVERAGE: 89
-
 jobs:
+
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -30,6 +29,4 @@ jobs:
           make lint
       - name: Test with pytest
         run: |
-          pytest --dead-fixtures
-          pytest -x
-          pytest --cov-fail-under=${{ env.MIN_CODE_COVERAGE }}
+          make test

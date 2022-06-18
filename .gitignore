@@ -116,3 +116,4 @@ venv
 static
 .env
 db.sqlite
+media

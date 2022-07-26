@@ -66,6 +66,8 @@ drf-spectacular[sidecar]==0.21.2
     # via -r requirements.in
 drf-spectacular-sidecar==2022.3.14
     # via drf-spectacular
+gunicorn==20.1.0
+    # via -r requirements.in
 idna==3.3
     # via requests
 inflection==0.5.1

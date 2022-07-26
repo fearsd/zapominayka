@@ -5,3 +5,4 @@ from app.conf.environ import env
 
 STATIC_URL = '/static/'
 STATIC_ROOT = env('STATIC_ROOT', cast=str, default='static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

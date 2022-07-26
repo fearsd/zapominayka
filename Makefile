@@ -18,4 +18,4 @@ lint:
 test:
 	mkdir -p src/app/static
 	cd src && pytest --dead-fixtures
-	cd src && pytest -x --cov-fail-under=89 --cov=.
+	cd src && pytest -x --cov-fail-under=89 --cov=. --cov-report=html

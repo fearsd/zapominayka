@@ -7,4 +7,4 @@ from app.models import DefaultModel
 
 class Author(DefaultModel):
     name = models.CharField(max_length=100)
-    image = models.ImageField()
+    image = models.ImageField(null=True)

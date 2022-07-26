@@ -11,7 +11,6 @@ def test_ok_get_authors_with_registered_user(as_user, author):
     assert result['previous'] is None
     assert result['results'][0]['id'] == author.pk
     assert result['results'][0]['name'] == author.name
-    assert result['results'][0]['image'] == 'http://testserver' + author.image.url
 
 
 def test_ok_get_authors_with_anon_user(as_anon, author):
@@ -22,7 +21,6 @@ def test_ok_get_authors_with_anon_user(as_anon, author):
     assert result['previous'] is None
     assert result['results'][0]['id'] == author.pk
     assert result['results'][0]['name'] == author.name
-    assert result['results'][0]['image'] == 'http://testserver' + author.image.url
 
 
 def test_ok_get_author_with_registered_user(as_user, author):
@@ -30,7 +28,6 @@ def test_ok_get_author_with_registered_user(as_user, author):
 
     assert result['id'] == author.pk
     assert result['name'] == author.name
-    assert result['image'] == 'http://testserver' + author.image.url
 
 
 def test_ok_get_author_with_anon_user(as_anon, author):
@@ -38,4 +35,3 @@ def test_ok_get_author_with_anon_user(as_anon, author):
 
     assert result['id'] == author.pk
     assert result['name'] == author.name
-    assert result['image'] == 'http://testserver' + author.image.url

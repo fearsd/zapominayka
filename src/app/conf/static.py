@@ -1,3 +1,6 @@
+import os
+
+from app.conf.boilerplate import BASE_DIR
 from app.conf.environ import env
 
 # Static files (CSS, JavaScript, Images)
@@ -6,3 +9,7 @@ from app.conf.environ import env
 STATIC_URL = '/static/'
 STATIC_ROOT = env('STATIC_ROOT', cast=str, default='static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)

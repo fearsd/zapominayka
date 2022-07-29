@@ -1,3 +1,16 @@
 from rest_framework import serializers
 
-# Create your DRF serializers here.
+from poems.models import Poem
+from poems.models import Screen
+
+
+class PoemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Poem
+        fields = '__all__'
+
+
+class ScreenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Screen
+        fields = '__all__'

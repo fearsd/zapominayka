@@ -7,6 +7,9 @@ from poems.api import viewsets
 
 router = SimpleRouter()
 
+router.register('screens/', viewsets.ScreensViewSet)
+router.register('', viewsets.PoemsViewSet)
+
 urlpatterns = [
     path('', include(router.urls)),
 ]

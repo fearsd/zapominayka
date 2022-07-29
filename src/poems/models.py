@@ -8,3 +8,9 @@ class Poem(DefaultModel):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     image = models.ImageField(null=True, blank=True)
     title = models.CharField(max_length=150)
+
+
+class Screen(DefaultModel):
+    poem = models.ForeignKey(Poem, on_delete=models.CASCADE)
+    text = models.TextField()
+    image = models.ImageField(null=True, blank=True)

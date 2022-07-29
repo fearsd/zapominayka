@@ -5,6 +5,7 @@ APPS = [
     'a12n',
     'users',
     'authors',
+    'poems',
 ]
 
 THIRD_PARTY_APPS = [

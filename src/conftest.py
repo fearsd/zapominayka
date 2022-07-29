@@ -5,4 +5,6 @@ pytest_plugins = [
     'users.fixtures',
     'authors.factory',
     'authors.fixtures',
+    'poems.factory',
+    'poems.fixtures',
 ]
